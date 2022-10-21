@@ -24,7 +24,7 @@ ARG INSTALL_DIR=/opt/intel/openvino
 ARG TEMP_DIR=/tmp/openvino_installer
 ARG DL_INSTALL_DIR=/opt/intel/openvino/deployment_tools
 ARG DL_DIR=/tmp
-ARG JOBS
+ARG JOBS=5
 ARG APT_OV_PACKAGE=openvino-2022.1.0
 
 # build_type=[ opt, dbg ]
@@ -57,6 +57,8 @@ RUN apt update && apt install -y \
             libxml2-dev \
             libnuma-dev \
             libssl-dev \
+            libtab-dev \
+            libpugixml-dev \
             patch \
             pkg-config \
             python2 \
@@ -133,7 +135,7 @@ WORKDIR /ovms/third_party/opencv
 RUN ./install_opencv.sh
 ####### End of OpenCV
 
-ARG ov_use_binary=1
+ARG ov_use_binary=0
 ARG DLDT_PACKAGE_URL
 ARG OPENVINO_NAME=${DLDT_PACKAGE_URL}
 ARG ov_source_branch=master
