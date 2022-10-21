@@ -57,7 +57,7 @@ RUN apt update && apt install -y \
             libxml2-dev \
             libnuma-dev \
             libssl-dev \
-            libtab-dev \
+            libtbb-dev \
             libpugixml-dev \
             patch \
             pkg-config \
