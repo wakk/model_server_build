@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=registry.cn-beijing.aliyuncs.com/xiumaozhi/github_ovms:2
+ARG BASE_IMAGE=registry.us-west-1.aliyuncs.com/xiumaozhi/github_ovms:2
 FROM $BASE_IMAGE as base_build
 
 LABEL version="1.0.0"
